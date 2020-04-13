@@ -122,16 +122,17 @@
     </section><!-- End Portfolio Details Section -->
 
     <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container">
+      <!--form action="trainer.html" class="form-container"-->
+      <form name="login" class="form-container">
         <h3 style="font-size: large; color: black;" >Trainer authentication</h3>
     
         <!--label for="email"><b>Emai</b></label>
         <input type="text" placeholder="Enter Email" name="email" required-->
     
         <!--label for="psw"><b>Password</b></label-->
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter the key" name="psw" required>
     
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn" onclick="check(this.form)" value="Login">Continue</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
       </form>
     </div>
@@ -156,6 +157,18 @@
   <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script>
+
+  //password authentication
+  function check(form){
+    if(form.psw.value=="1234")
+      window.open("trainer.html");
+    else{
+      alert("Wrong key");
+    }
+  }
+
+
+
   function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
