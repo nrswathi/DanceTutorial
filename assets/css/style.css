@@ -836,6 +836,13 @@ section {
   right: 15px;
 }
 
+#live_tutorial_cont{
+  visibility: visible;
+}
+
+/*l1#live_tutorial_cont{
+  visibility: hidden;
+}
 /*
 live session
 */
@@ -1323,4 +1330,16 @@ live session
   text-align: center;
   font-size: 13px;
   padding-top: 5px;
+}
+/* start-stop button for live*/
+.start_btn{  
+  background-color: #61b959;
+  color: white;
+  padding : 16px 20px;
+}
+
+.stream_session{  
+  background-color: slategray;
+  color: white;
+  padding : 16px 20px;
 }
