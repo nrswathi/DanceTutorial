@@ -161,9 +161,71 @@
   });
 
 })(jQuery);
+/*
+$('#start_btn').on('click', function (e) {
+  e.preventDefault();
+  $(this).text(function (_, text) {
+      return text === 'Stop Recording' ? 'Start recording' : 'Stop Recording';
+  }).toggleClass('stop_button');
+});
+
+*/
+
+ // live sessions
+
+//live video access
+
+function start_recording(){
+  var video = document.getElementById('start_video');
+  var btn = document.getElementById('start_btn');
+  var stream = document.getElementById('stream_session');
+  stream.value="Stream Session";
+  stream.innerHTML="Stream Session";
+  stream.style.opacity="1";
+  var count;
+
+if(btn.value=="Start recording"){
+// Get access to the camera!
+    btn.style.backgroundColor="orangered";
+    btn.value="Pause Recording";
+    btn.innerHTML ="Pause Recording";
+        if( typeof(count)=='undefined') {
+          if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Not adding `{ audio: true }` since we only want video now
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(function(stream) {
+                //video.src = window.URL.createObjectURL(stream);
+                video.srcObject = stream;
+                video.play();
+            });
+        }
+          count=1;
+        }
+        else {
+            video.play();
+        }
+     
+    }
+  else{
+    btn.style.backgroundColor="limegreen";
+    btn.value="Start recording";
+    btn.innerHTML ="Start recording";
+    video.pause();
+  }
+}
+
+//end session
+function end_session(){
+  var live_icon = document.getElementById('live_tutorial_cont');
+  live_icon.style.backgroundColor="red";
+
+  //window.open("tutorials.html","_self");
+}
 
 
-  // live sessions
+
+
+ 
+ /*
   var Now = new Date(),
   CurrentDay = Now.getDay(),
   OpeningTime = new Date(Now.getFullYear(), Now.getMonth(), Now.getDate(), 8, 30),
@@ -173,7 +235,8 @@
   if (Open) {
     $('.openstatus').show();
   }
+  */
 /*if (CurrentDay !== 6 && CurrentDay !== 0 && Open) {
     $('.openstatus').toggle();
-}
+} 
 */
