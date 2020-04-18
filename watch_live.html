@@ -59,40 +59,39 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style="font-size:60px; text-align: center;"><b>Welcome to the tutorial</b></h2>
+          <h2 id="test" style="font-size:60px; text-align: center;"><b>Welcome to the tutorial</b></h2>
           
           <ol>
+            <!--li><button style="position: absolute; top: 10px;" class="open-button" onclick="openUrlForm()">Change URL</button></li-->
             <li><a href="index.html">Home</a></li>
             <li>tutorials</li>
+            
           </ol>
           
         </div>
        
 
         <p>Enjoy the live session</p>
+        <div  class="form-popup" id="urlForm">
+          <!--form action="trainer.html" class="form-container"-->
+          <form name="login" class="form-container" >
+            <h3 style="font-size: large; color: black;text-align: center;" >Enter URL</h3>
+        
+            <!--label for="email"><b>Emai</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required-->
+        
+            <!--label for="psw"><b>Password</b></label-->
+            <input type="text" placeholder="Paste URL" name="url" required>
+            <button type="submit" class="btn" onclick="changeUrl(this.form)" value="Login">Continue</button>
+            <!--button type="submit" class="btn cancel" onclick="closeForm()">Close</button-->
+          </form>
+        </div>
         
         
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Live video section ======= -->
-    <!--video id="start_video" autoplay muted></video-->
-    <!--section>
-      <div class="row">
-        <div class="col-lg-9">
-            <div class="container">
-              <div class="tutorials-details-container">
-                <video id="start_video" autoplay muted></video>
-            </div>
-            <!--/div>
-            <div class="col-lg-3">
-              <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 "></div>
-              <p>uhkgeku</p>
-              </div>
-              </div>
-      </div>
-
-    </section--><!-- End Portfolio Details Section -->
+  
 
     <section id="about" class="about">
       <div class="container">
@@ -105,20 +104,14 @@
         <div class="row">
           <div class="col-lg-8" >
          
-            <video id="start_video" autoplay muted></video>
-            
+            <!--video id="start_video" autoplay muted></video-->
+            <iframe id="livevid_id" width="700px" height="500px" src="https://www.youtube.com/embed/jjXQdN1KQy4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
           </div>
           <div class="col-lg-3" >
             <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              <h3>High class training</h3>
-              <p class="font-italic">
-                start learning from today. What are you waiting for
-              </p>
-              <ul>
-                <li><i class="bx bx-check-double"></i> Best teachers</li>
-                <li><i class="bx bx-check-double"></i> Flexible learning hours.</li>
-                <li><i class="bx bx-check-double"></i>Completely free.</li>
-              </ul>
+             
+              <iframe id="livechat_id" width="410px" height="500px" src="https://www.youtube.com/live_chat?v=jjXQdN1KQy4&embed_domain=localhost"></iframe>
               <p>
                 
               </p>
@@ -149,12 +142,23 @@
   <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script>
-  function openForm() {
-  document.getElementById("myForm").style.display = "block";
+function changeUrl(form){
+   var heading = document.getElementById("test");
+   var youtube_id = document.getElementById("livevid_id");
+   var chat_id = document.getElementById("livechat_id");
+   var temp = "https://www.youtube.com/embed/";
+   youtube_id.src =  temp.concat(form.url.value,"?autoplay=1");
+   heading.innerHTML =  temp.concat(form.url.value,"?autoplay=1");
+   var temp2 = "https://www.youtube.com/live_chat?v=";
+   chat_id.src = temp2.concat(form.url.value,"&embed_domain=localhost");
+}
+
+function openUrlForm() {
+document.getElementById("urlForm").style.display = "block";
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+document.getElementById("urlForm").style.display = "none";
 }
 
 
