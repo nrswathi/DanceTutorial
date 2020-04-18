@@ -161,17 +161,7 @@
   });
 
 })(jQuery);
-/*
-$('#start_btn').on('click', function (e) {
-  e.preventDefault();
-  $(this).text(function (_, text) {
-      return text === 'Stop Recording' ? 'Start recording' : 'Stop Recording';
-  }).toggleClass('stop_button');
-});
 
-*/
-
- // live sessions
 
 //live video access
 
@@ -221,22 +211,3 @@ function end_session(){
   //window.open("tutorials.html","_self");
 }
 
-
-
-
- 
- /*
-  var Now = new Date(),
-  CurrentDay = Now.getDay(),
-  OpeningTime = new Date(Now.getFullYear(), Now.getMonth(), Now.getDate(), 8, 30),
-  ClosingTime = new Date(Now.getFullYear(), Now.getMonth(), Now.getDate(), 23, 30),
-  Open = (Now.getTime() > OpeningTime.getTime() && Now.getTime() < ClosingTime.getTime());
-
-  if (Open) {
-    $('.openstatus').show();
-  }
-  */
-/*if (CurrentDay !== 6 && CurrentDay !== 0 && Open) {
-    $('.openstatus').toggle();
-} 
-*/
