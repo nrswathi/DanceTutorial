@@ -60,6 +60,7 @@
 
           <li><a href="#faq-us">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!--li><button class="open-button" onclick="openForm()">Trainer login</button></li-->
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -72,12 +73,6 @@
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
-        <!--div class="section-title" data-aos="fade-up">
-          <h2>About Us</h2>
-          <p>We help enthusiasts learn Bharatanatyam learn from the best</p>
-        </div-->
-
         <div class="row">
           <div class="col-lg-6" data-aos="fade-right">
           <div class="owl-carousel carousel">
@@ -115,7 +110,7 @@
 
       </div>
     </section><!-- End About Us Section -->
-\
+
 
     <!-- ======= Tutorials Section ======= -->
     <section id="tutorials" class="tutorials">
@@ -267,7 +262,7 @@
               </div>
     
               <div class="col-lg-5 order-1 order-lg-2 align-items-stretch video-box" style='background-image: url("assets/img/faq-icon.png");' data-aos="zoom-in">
-                <a href="https://www.youtube.com/watch?v=yAoLSRbwxL8" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                <a href="https://www.youtube.com/watch?v=JWhA3ldZcyY" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
               </div>
     
             </div>
@@ -311,35 +306,10 @@
           </div>
 
           <div class="col-lg-6 mt-5 mt-lg-0">
-            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: black;">Feel free to contact us</h2>
-
-            <img src="assets/img/kathak.jpg" width="600px" height="250px">
-            <!--form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-left">
-              <div class="form-row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
-                </div>
-                <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form-->
+            <!--h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: black;">Feel free to contact us</h2-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5580625207313!2d77.5648763141355!3d13.00009401777142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1628a1812987%3A0xc0cc7e41c8e5fac8!2s9th%20Cross%20Rd%2C%20Malleshwaram%2C%20Bengaluru%2C%20Karnataka%20560003!5e0!3m2!1sen!2sin!4v1587181314780!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <!--img src="assets/img/kathak.jpg" width="600px" height="250px"-->
+           
 
           </div>
 
@@ -347,6 +317,24 @@
 
       </div>
     </section><!-- End Contact Section -->
+
+    <!--trainer auth-->
+    <div class="form-popup" id="myForm">
+      <!--form action="trainer.html" class="form-container"-->
+      <form name="login" class="form-container">
+        <h3 style="font-size: large; color: black;text-align: center;" >Start Live</h3>
+    
+        <!--label for="email"><b>Emai</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required-->
+    
+        <!--label for="psw"><b>Password</b></label-->
+        <!--input type="text" placeholder="Paste URL" name="url" required-->
+        <input type="password" placeholder="Enter the key" name="psw" required>
+    
+        <button type="submit" class="btn" onclick="check(this.form)" value="Login">Continue</button>
+        <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
 
   </main><!-- End #main -->
 
@@ -366,41 +354,34 @@
   <script src="assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<!--script src="/__/firebase/7.13.2/firebase-app.js"></script>
 
+<script>
+function check(form){
+ 
+  if(form.psw.value=="1234"){
+    window.open("trainer.html");
+   /* var youtube_id = document.getElementById("livevid_id");
+    var live_vid = concat("https://www.youtube.com/embed/",youtube_id,"?autoplay=1");
+    var live_chat = concat("https://www.youtube.com/live_chat?v=",youtube_id,"&embed_domain=localhost");
+    live_vid.src = form.url.value;
+    live_chat = form.url.value;
+    */
+  }
+  else{
+    alert("Wrong key");
+  }
+}
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<!--script src="/__/firebase/7.13.2/firebase-analytics.js"></script>
+function openForm() {
+document.getElementById("myForm").style.display = "block";
+}
 
-<!-- Initialize Firebase -->
-<!--script src="/__/firebase/init.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-
+function closeForm() {
+document.getElementById("myForm").style.display = "none";
+}
+</script>
 <script src="assets/js/app.js">
-  // Your web app's Firebase configuration
- /* var firebaseConfig = {
-    apiKey: "AIzaSyC3HRV8-6cMqvIBAc678WhBbon6ZWmB_1o",
-    authDomain: "dancetutorial-4a7c3.firebaseapp.com",
-    databaseURL: "https://dancetutorial-4a7c3.firebaseio.com",
-    projectId: "dancetutorial-4a7c3",
-    storageBucket: "dancetutorial-4a7c3.appspot.com",
-    messagingSenderId: "768915864593",
-    appId: "1:768915864593:web:3093002570dc6dba8505b0",
-    measurementId: "G-KJGYQ3F6D0"
-  };
-  // Initialize Firebase
-
-  firebase.initializeApp(config);
-  firebase.analytics();
-
-  var bigOne= document.getElementById('bigOne');
-  var dbRef = firebase.database().ref().child('text');
-  dbRef.on('value',snap=> bigOne.innerText =snap.val()); 
-  */
+ 
 </script>
 
 </body>
