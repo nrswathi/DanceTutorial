@@ -1134,8 +1134,9 @@ live session
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
+  background-color: #888888;
   color: white;
+  opacity: 1;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -1166,7 +1167,7 @@ live session
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
-  padding: 15px;
+  padding: 8px 15px;
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
@@ -1182,7 +1183,7 @@ live session
 .form-container .btn {
   background-color: rgb(67, 83, 67);
   color: white;
-  padding: 16px 20px;
+  padding: 8px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
